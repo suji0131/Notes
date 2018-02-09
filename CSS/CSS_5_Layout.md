@@ -73,6 +73,13 @@ article:nth-of-type(3) {
 ```
 
 ### Horizontal and Vertical Alignment
+***align-item*** controls where flex items sit on the cross axis
+Values: **stretch** (default), **center**, **flex-start**, **flex-end**
+
+***justify-content*** controls where flex items sit on the main axis
+Values: **flex-start** (default), **center**,  **flex-end**, **space-around**(evenly along the main axis, with a bit of space left at either end), **space-between** is very similar to space-around except that it doesn't leave any space at either end.
+
+### Ordering Flex items
 
 
 
