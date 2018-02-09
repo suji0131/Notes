@@ -1,5 +1,5 @@
 # CSS Layout
-![Source](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+[Source](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
 
 ## Normal Layout Flow
 Normal flow is how the browser lays out HTML pages by default when you do nothing to control page layout (elements stacked up on top of one another).
