@@ -74,17 +74,35 @@ article:nth-of-type(3) {
 
 ### Horizontal and Vertical Alignment
 ***align-item*** controls where flex items sit on the cross axis
+
 Values: **stretch** (default), **center**, **flex-start**, **flex-end**
 
 ***justify-content*** controls where flex items sit on the main axis
+
 Values: **flex-start** (default), **center**,  **flex-end**, **space-around**(evenly along the main axis, with a bit of space left at either end), **space-between** is very similar to space-around except that it doesn't leave any space at either end.
 
 ### Ordering Flex items
+Can be helpful in ordering items of main element
+```
+button:first-child {
+  order: 1;
+}
+```
+By default, all flex items have an order value of 0. Flex items with higher order values set on them will appear later in the display order than items with lower order values. (negatives are also allowed)
 
+### Nested Flex boxes
+It is perfectly ok to set a flex item to also be a flex container, so that its children are also laid out like flexible boxes. 
+```
+article {
+  flex: 1 200px;
+}
 
-
-
-
+article:nth-of-type(3) {
+  flex: 3 200px;
+  display: flex;
+  flex-flow: column;
+}
+```
 
 
 
