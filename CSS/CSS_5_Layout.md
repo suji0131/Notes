@@ -56,18 +56,23 @@ Here we are giving each <article> element a value of 1. i.e, after padding and m
 article:nth-of-type(3) {
   flex: 2;
 }
-
-/* Each flex item will first be given 200px of the available space. After that, the rest of the available space will be shared out according to the proportion units */
+```
+```
+/* Each flex item will first be given 200px of the available space. 
+After that, the rest of the available space will be shared out according 
+to the proportion units */
 article {
   flex: 1 200px;
 }
-
+```
+```
 /* 3rd will have twice the rest of space */
 article:nth-of-type(3) {
   flex: 2 200px;
 }
 ```
 
+### Horizontal and Vertical Alignment
 
 
 
