@@ -18,8 +18,14 @@ main {
 }
 ```
 
+### Terminology
 ![Flex_terms](images/flex_terms.png)
-<terminology>
+
+- The parent element that has display: flex set on it is called the _**flex container**_.
+- The items being laid out as flexible boxes inside the flex container are called _**flex items**_.
+- The _**main axis**_ is the axis running in the direction the flex items are being laid out in. The start and end of this axis are called the _**main start**_ and _**main end**_.
+- The _**cross axis**_ is the axis running perpendicular to main axis. The start and end of this axis are called the _**cross start**_ and _**cross end**_.
+
 
 ***flex-direction*** what direction main axis runs. **row, column, row-reverse**
 ```
