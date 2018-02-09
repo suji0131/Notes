@@ -18,7 +18,7 @@ main {
 }
 ```
 
-<insert flex box image>
+![Flex_terms](images/flex_terms.png)
 <terminology>
 
 ***flex-direction*** what direction main axis runs. **row, column, row-reverse**
