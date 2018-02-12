@@ -1,6 +1,6 @@
 # Django Template Language
 
-![Source](https://docs.djangoproject.com/en/2.0/ref/templates/language/)
+[Source](https://docs.djangoproject.com/en/2.0/ref/templates/language/)
 
 ## Variables look like this: {{ variable }}
 When the template engine encounters a variable, it evaluates that variable and
@@ -31,7 +31,7 @@ To join a list with commas and spaces you’d use {{ list|join:", " }}
 
 check out escape filter it is a good deterrent against xss attacks!
 
-![Built in filters](https://docs.djangoproject.com/en/2.0/ref/templates/builtins/#ref-templates-builtins-filters)
+[Built in filters](https://docs.djangoproject.com/en/2.0/ref/templates/builtins/#ref-templates-builtins-filters)
 
 You can also create your own custom template filters
 
@@ -43,7 +43,7 @@ variables.
 Some tags (like if and for) require beginning and ending tags
 (i.e. {% tag %} ... tag contents ... {% endtag %})
 
-![Built in tags](https://docs.djangoproject.com/en/2.0/ref/templates/builtins/#ref-templates-builtins-tags)
+[Built in tags](https://docs.djangoproject.com/en/2.0/ref/templates/builtins/#ref-templates-builtins-tags)
 
 example:
 ```
