@@ -21,16 +21,16 @@ from django import forms
 # Form class
 class ContactForm(forms.Form): 
 
-    # field,
+    # field 1,
     subject = forms.CharField(max_length=100)  
     
-    # filed, changing the default widget associated with a field
+    # field 2, changing the default widget associated with a field
     message = forms.CharField(widget=forms.Textarea) 
     
-    # field,
+    # field 3,
     sender = forms.EmailField() 
     
-    # field,
+    # field 4,
     cc_myself = forms.BooleanField(required=False) 
 ```
 
@@ -91,6 +91,43 @@ We don’t need to do much in our name.html template. The simplest example is:
     <input type="submit" value="Submit" />
 </form>
 ```
+
+## Accessing Field Data
+Lets consider the below forms.py which has 4 fields:
+```
+from django import forms
+
+class ContactForm(forms.Form):
+    subject = forms.CharField(max_length=100)
+    message = forms.CharField(widget=forms.Textarea)
+    sender = forms.EmailField()
+    cc_myself = forms.BooleanField(required=False)
+```
+Whatever the data submitted with a form, once it has been successfully validated by calling ```is_valid()``` (and it returned True), the validated form data will be in the form.cleaned_data dictionary. This data will have been nicely converted into Python types for you.
+
+Data can now be accessed using ```form.cleaned_data['field_name'] ```. Here’s how the form data could be processed in the view that handles this form:
+```
+#email example
+from django.core.mail import send_mail
+
+if form.is_valid():
+    subject = form.cleaned_data['subject']
+    message = form.cleaned_data['message']
+    sender = form.cleaned_data['sender']
+    cc_myself = form.cleaned_data['cc_myself']
+
+    recipients = ['info@example.com']
+    if cc_myself:
+        recipients.append(sender)
+
+    send_mail(subject, message, sender, recipients)
+    return HttpResponseRedirect('/thanks/')
+```
+
+
+## Examples
+
+
 
 
 
