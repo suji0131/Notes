@@ -1,4 +1,4 @@
-# Forms in Django
+# Forms in Django (add rest of notes for form as list etc.)
 [Source](https://docs.djangoproject.com/en/2.0/topics/forms/)
 
 Django handles three distinct parts of the work involved in forms:
