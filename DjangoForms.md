@@ -49,9 +49,11 @@ class NameForm(forms.Form):
 <input id="your_name" type="text" name="your_name" maxlength="100" required />
 ```
 
-Note that it does not include the <form> tags, or a submit button. We’ll have to provide those ourselves in the template.
+Note that it does not include the ```<form>``` tags, or a submit button. We’ll have to provide those ourselves in the template.
     
 ### 3) Writing the view accordingly
+To handle the form we need to instantiate it in the view for the URL where we want it to be published. Form data sent back to a Django website is processed by a view, generally the same view which published the form. This allows us to reuse some of the same logic.
+
 ```
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
@@ -75,6 +77,16 @@ def get_name(request):
         form = NameForm()
 
     return render(request, 'name.html', {'form': form})
+```
+
+### 4) Writing a Template
+We don’t need to do much in our name.html template. The simplest example is:
+```
+<form action="/your-name/" method="post">
+    {% csrf_token %} <!-- include this for the security -->
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
 ```
 
 
