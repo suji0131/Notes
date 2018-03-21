@@ -31,3 +31,39 @@ A system with high precision but low recall is just the opposite, returning very
 Sensitivity is the other name for recall but specificity is **NOT PRECISION**. Specificity is a measure of how many of the negative samples have been identified as being negative. 
 
 Precision is used when positive class is more interesting than the negative class. So, if your problem involves kind of searching a needle in the haystack when for ex: the positive class samples are very rare compared to the negative classes, use a precision recall curve. Othwerwise use a ROC curve because a ROC curve remains the same regardless of the baseline prior probability of your positive class (the important rare class).
+
+### How can you prove that one improvement you've brought to an algorithm is really an improvement over not doing anything?
+One common way to achieve the above guidelines is through A/B testing, where both the versions of algorithm are kept running on similar environment for a considerably long time and real-life input data is randomly split between the two. This approach is particularly common in Web Analytics. 
+
+(more on AB Testing later)
+
+### What is root cause analysis?
+Essentially, you can find the root cause of a problem and show the relationship of causes by repeatedly asking the question, "Why?", until you find the root of the problem.
+
+### price elasticity
+Price Elasticity: This curve measures how demand varies with changes in price.
+
+### What is statistical power?
+Power binary hypothesis test is the probability that the test correctly rejects the null hypothesis (H0) when the alternative hypothesis (H1) is true. To put in another way, Statistical power is the likelihood that a study will detect an effect when the effect is present. The higher the statistical power, the less likely you are to make a Type II error (concluding there is no effect when, in fact, there is). (Different fromn AB testing?).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
