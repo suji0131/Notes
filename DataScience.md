@@ -19,3 +19,15 @@ Regularization, significantly reduces the variance of the model, without substan
 - Use jackknife resampling if the dataset contains a small number of instances, and measure validity with R squared and mean squared error (MSE). The jackknife estimator of a parameter is found by systematically leaving out each observation from a dataset and calculating the estimate and then finding the average of these calculations. Given a sample of size n, the jackknife estimate is found by aggregating the estimates of each n-1 sized sub-sample.
 
 ### Explain what precision and recall are. How do they relate to the ROC curve?
+Precision-Recall is a useful measure of success of prediction when the classes are very imbalanced. 
+
+Recall (sensitivity): True positive divided by how real ones are there. (how many of the positive samples have been identified as being positive)
+
+A system with high recall but low precision returns many results, but most of its predicted labels are incorrect when compared to the training labels.
+
+Precision: True positive divided by how many ones did you predict
+A system with high precision but low recall is just the opposite, returning very few results, but most of its predicted labels are correct when compared to the training labels.
+
+Sensitivity is the other name for recall but specificity is **NOT PRECISION**. Specificity is a measure of how many of the negative samples have been identified as being negative. 
+
+Precision is used when positive class is more interesting than the negative class. So, if your problem involves kind of searching a needle in the haystack when for ex: the positive class samples are very rare compared to the negative classes, use a precision recall curve. Othwerwise use a ROC curve because a ROC curve remains the same regardless of the baseline prior probability of your positive class (the important rare class).
