@@ -21,7 +21,7 @@ Regularization, significantly reduces the variance of the model, without substan
 ### Explain what precision and recall are. How do they relate to the ROC curve?
 Precision-Recall is a useful measure of success of prediction when the classes are very imbalanced. 
 
-Recall (sensitivity): True positive divided by how real ones are there. (how many of the positive samples have been identified as being positive)
+Recall (sensitivity): True positive divided by how many real ones are there. (how many of the positive samples have been identified as being positive)
 
 A system with high recall but low precision returns many results, but most of its predicted labels are incorrect when compared to the training labels.
 
@@ -46,7 +46,7 @@ Essentially, you can find the root cause of a problem and show the relationship 
 Price Elasticity: This curve measures how demand varies with changes in price.
 
 ### What is statistical power?
-Power binary hypothesis test is the probability that the test correctly rejects the null hypothesis (H0) when the alternative hypothesis (H1) is true. To put in another way, Statistical power is the likelihood that a study will detect an effect when the effect is present. The higher the statistical power, the less likely you are to make a Type II error (concluding there is no effect when, in fact, there is). (Different fromn AB testing?).
+Power binary of a hypothesis test is the probability that the test correctly rejects null hypothesis (H0) when alternative hypothesis (H1) is true. To put in another way, Statistical power is the likelihood that a study will detect an effect when the effect is present. The higher the statistical power, the less likely you are to make a Type II error (concluding there is no effect when, in fact, there is). (Different fromn AB testing?).
 
 ### Is it better to have too many false positives, or too many false negatives? Explain.
 It depends on the question as well as on the domain for which we are trying to solve the question. 
