@@ -68,7 +68,110 @@ A solution to this problem is a procedure called cross-validation (CV for short)
 
 The performance measure reported by k-fold cross-validation is then the average of the values computed in the loop. This approach can be computationally expensive, but does not waste too much data (as it is the case when fixing an arbitrary test set), which is a major advantage in problem such as inverse inference where the number of samples is very small.
 
+[Source](https://elitedatascience.com/machine-learning-interview-questions-answers)
+### What are parametric models? Give an example.
+Parametric models are those with a finite number of parameters. To predict new data, you only need to know the parameters of the model. Examples include linear regression, logistic regression, and linear SVMs.
 
+Non-parametric models are those with an unbounded number of parameters, allowing for more flexibility. To predict new data, you need to know the parameters of the model and the state of the data that has been observed. Examples include decision trees, k-nearest neighbors, and topic models using latent dirichlet analysis.
+
+### What is the "Curse of Dimensionality?
+The difficulty of searching through a solution space becomes much harder as you have more features (dimensions).
+
+Consider the analogy of looking for a penny in a line vs. a field vs. a building. The more dimensions you have, the higher volume of data you'll need.
+
+### Explain the Bias-Variance Tradeoff.
+Predictive models have a tradeoff between bias (how well the model fits the data or how far the expected value is from original mean) and variance (how much the model changes based on changes in the inputs).
+
+Simpler models are stable (low variance) but they don't get close to the truth (high bias).
+
+More complex models are more prone to being overfit (high variance) but they are expressive enough to get close to the truth (low bias).
+
+The best model for a given problem usually lies somewhere in the middle.
+
+### What is the difference between stochastic gradient descent (SGD) and gradient descent (GD)?
+Both algorithms are methods for finding a set of parameters that minimize a loss function by evaluating parameters against data and then making adjustments.
+
+In standard gradient descent, you'll evaluate all training samples for each set of parameters. This is akin to taking big, slow steps toward the solution.
+
+In stochastic gradient descent, you'll evaluate only 1 training sample for the set of parameters before updating them. This is akin to taking small, quick steps toward the solution.
+
+### When would you use GD over SDG, and vice-versa?
+GD theoretically minimizes the error function better than SGD. However, SGD converges much faster once the dataset becomes large.
+
+That means GD is preferable for small datasets while SGD is preferable for larger ones.
+
+In practice, however, SGD is used for most applications because it minimizes the error function well enough while being much faster and more memory efficient for large datasets.
+
+### What is the Box-Cox transformation used for?
+[Blog](https://www.quora.com/In-laymans-language-Box-Cox-transformation-is-used-for-what)
+The Box-Cox transformation is a generalized "power transformation" that transforms data to make the distribution more normal.
+
+For example, when its lambda parameter is 0, it's equivalent to the log-transformation.
+
+It's used to stabilize the variance (eliminate heteroskedasticity) and normalize the distribution.
+
+### What are 3 data preprocessing techniques to handle outliers?
+- cap at threshold (Winsorize).
+- Transform to reduce skew (using Box-Cox or similar).
+- Remove outliers if you're certain they are anomalies or measurement errors.
+
+### What are 3 ways of reducing dimensionality?
+- Removing collinear features.
+- Performing PCA, ICA, or other forms of algorithmic dimensionality reduction.
+- Combining features with feature engineering.
+
+### If you split your data into train/test splits, is it still possible to overfit your model?
+Yes, it's definitely possible. One common beginner mistake is re-tuning a model or training new models with different parameters after seeing its performance on the test set.
+
+In this case, its the model selection process that causes the overfitting. The test set should not be tainted until you're ready to make your final selection.
+
+### What are the advantages and disadvantages of decision trees?
+Advantages: Decision trees are easy to interpret, nonparametric (which means they are robust to outliers), and there are relatively few parameters to tune.
+
+Disadvantages: Decision trees are prone to be overfit. However, this can be addressed by ensemble methods like random forests or boosted trees.
+
+### What are the advantages and disadvantages of neural networks?
+Advantages: Neural networks (specifically deep NNs) have led to performance breakthroughs for unstructured datasets such as images, audio, and video. Their incredible flexibility allows them to learn patterns that no other ML algorithm can learn.
+
+Disadvantages: However, they require a large amount of training data to converge. It's also difficult to pick the right architecture, and the internal "hidden" layers are incomprehensible.
+
+### How can you choose a classifier based on training set size?
+If training set is small, high bias / low variance models (e.g. Naive Bayes) tend to perform better because they are less likely to be overfit.
+
+If training set is large, low bias / high variance models (e.g. Logistic Regression) tend to perform better because they can reflect more complex relationships.
+
+###  Explain Latent Dirichlet Allocation (LDA).
+Latent Dirichlet Allocation (LDA) is a common method of topic modeling, or classifying documents by subject matter.
+
+LDA is a generative model that represents documents as a mixture of topics that each have their own probability distribution of possible words.
+
+The "Dirichlet" distribution is simply a distribution of distributions. In LDA, documents are distributions of topics that are distributions of words.
+
+### Explain Principle Component Analysis (PCA).
+PCA is a method for transforming features in a dataset by combining them into uncorrelated linear combinations.
+
+These new features, or principal components, sequentially maximize the variance represented (i.e. the first principal component has the most variance, the second principal component has the second most, and so on).
+
+As a result, PCA is useful for dimensionality reduction because you can set an arbitrary variance cutoff.
+
+### Why are ensemble methods (Combining multiple models for better performance) superior to individual models?
+They average out biases, reduce variance, and are less likely to overfit.
+
+This implies that you can build your models as usual and typically expect a small performance boost from ensembling.
+
+### Explain bagging.
+Bagging, or Bootstrap Aggregating, is an ensemble method in which the dataset is first divided into multiple subsets through resampling.
+
+Then, each subset is used to train a model, and the final predictions are made through voting or averaging the component models.
+
+Bagging is performed in parallel.
+
+### How can you help our marketing team be more efficient?
+The answer will depend on the type of company. Here are some examples.
+
+Clustering algorithms to build custom customer segments for each type of marketing campaign.
+Natural language processing for headlines to predict performance before running ad spend.
+Predict conversion probability based on a user's website behavior in order to create better re-targeting campaigns.
 
 
 
