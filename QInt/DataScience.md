@@ -169,9 +169,9 @@ Bagging is performed in parallel.
 ### How can you help our marketing team be more efficient?
 The answer will depend on the type of company. Here are some examples.
 
-Clustering algorithms to build custom customer segments for each type of marketing campaign.
-Natural language processing for headlines to predict performance before running ad spend.
-Predict conversion probability based on a user's website behavior in order to create better re-targeting campaigns.
+- Clustering algorithms to build custom customer segments for each type of marketing campaign.
+- Natural language processing for headlines to predict performance before running ad spend.
+- Predict conversion probability based on a user's website behavior in order to create better re-targeting campaigns.
 
 
 
