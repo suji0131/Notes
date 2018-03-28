@@ -26,5 +26,10 @@ The answer to this question is neither of these because passing semantics in Pyt
 ### li = [1,2,3,4] then li[8:] returns?
 An empty list []. Most of the people might confuse the answer with an index error because the code is attempting to access a member in the list whose index exceeds the total number of members in the list. The reason being the code is trying to access the slice of a list at a starting index which is greater than the number of members in the list.
 
-
-
+### Sort a list based on another list
+```
+#sort B based on values in A
+A = [10,20,15]
+B = [0,1,2]
+[b for a,b in sorted(zip(A, B))]
+```
