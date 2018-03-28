@@ -1,74 +1,9 @@
 # Data Science Interview Questions
 
 [Source](https://www.kdnuggets.com/2016/02/21-data-science-interview-questions-answers.html)
-### Explain what regularization is and why it is useful.
-[blog about regularization](https://towardsdatascience.com/regularization-in-machine-learning-76441ddcf99a)
-
-To prevent overfitting. It discourages learning a more complex or flexible model, so as to avoid the risk of overfitting. We 
-multiply the parameters by regularization coefficient, λ (a tuning parameter that decides how much we want to penalize the flexibility of our model)
-
-![Ridge Regression](https://cdn-images-1.medium.com/max/800/1*CiqZ8lhwxi5c4d1nV24w4g.png)
-
-![Lasso](https://cdn-images-1.medium.com/max/800/1*tHJ4sSPYV0bDr8xxEdiwXA.png)
-
-Regularization, significantly reduces the variance of the model, without substantial increase in its bias. So the tuning parameter λ, used in the regularization techniques described above, controls the impact on bias and variance. As the value of λ rises, it reduces the value of coefficients and thus reducing the variance. Till a point, this increase in λ is beneficial as it is only reducing the variance(hence avoiding overfitting), without loosing any important properties in the data. But after certain value, the model starts loosing important properties, giving rise to bias in the model and thus underfitting. Therefore, the value of λ should be carefully selected.
-
-### How would you validate a model you created to generate a predictive model of a quantitative outcome variable using multiple regression.
-- Using R<sup>2</sup> is one way.
-- If the values seem to be reasonable, examine the parameters; any of the following would indicate poor estimation or multi-collinearity: opposite signs of expectations, unusually large or small values, or observed inconsistency when the model is fed new data.
-- Use jackknife resampling if the dataset contains a small number of instances, and measure validity with R squared and mean squared error (MSE). The jackknife estimator of a parameter is found by systematically leaving out each observation from a dataset and calculating the estimate and then finding the average of these calculations. Given a sample of size n, the jackknife estimate is found by aggregating the estimates of each n-1 sized sub-sample.
-
-### Explain what precision and recall are. How do they relate to the ROC curve?
-Precision-Recall is a useful measure of success of prediction when the classes are very imbalanced. 
-
-Recall (sensitivity): True positive divided by how many real ones are there. (how many of the positive samples have been identified as being positive)
-
-A system with high recall but low precision returns many results, but most of its predicted labels are incorrect when compared to the training labels.
-
-Precision: True positive divided by how many ones did you predict
-A system with high precision but low recall is just the opposite, returning very few results, but most of its predicted labels are correct when compared to the training labels.
-
-Sensitivity is the other name for recall but specificity is **NOT PRECISION**. Specificity is a measure of how many of the negative samples have been identified as being negative. 
-
-Precision is used when positive class is more interesting than the negative class. So, if your problem involves kind of searching a needle in the haystack when for ex: the positive class samples are very rare compared to the negative classes, use a precision recall curve. Othwerwise use a ROC curve because a ROC curve remains the same regardless of the baseline prior probability of your positive class (the important rare class).
-
-### How can you prove that one improvement you've brought to an algorithm is really an improvement over not doing anything?
-One common way to achieve the above guidelines is through A/B testing, where both the versions of algorithm are kept running on similar environment for a considerably long time and real-life input data is randomly split between the two. This approach is particularly common in Web Analytics. 
-
-(more on AB Testing later)
-
-### What is root cause analysis?
-Essentially, you can find the root cause of a problem and show the relationship of causes by repeatedly asking the question, "Why?", until you find the root of the problem.
-
-
-
-### price elasticity
-Price Elasticity: This curve measures how demand varies with changes in price.
-
-### What is statistical power?
-Power binary of a hypothesis test is the probability that the test correctly rejects null hypothesis (H0) when alternative hypothesis (H1) is true. To put in another way, Statistical power is the likelihood that a study will detect an effect when the effect is present. The higher the statistical power, the less likely you are to make a Type II error (concluding there is no effect when, in fact, there is). (Different fromn AB testing?).
-
-### Is it better to have too many false positives, or too many false negatives? Explain.
-It depends on the question as well as on the domain for which we are trying to solve the question. 
-
-In medical testing, false negatives may provide a falsely reassuring message to patients and physicians that disease is absent, when it is actually present. This sometimes leads to inappropriate or inadequate treatment of both the patient and their disease. So, it is desired to have too many false positive. 
-
-For spam filtering, a false positive occurs when spam filtering or spam blocking techniques wrongly classify a legitimate email message as spam and, as a result, interferes with its delivery. While most anti-spam tactics can block or filter a high percentage of unwanted emails, doing so without creating significant false-positive results is a much more demanding task. So, we prefer too many false negatives over many false positives. 
-
-### What is selection bias, why is it important and how can you avoid it?
-Selection bias, in general, is a problematic situation in which error is introduced due to a non-random population sample. For example, if a given sample of 100 test cases was made up of a 60/20/15/5 split of 4 classes which actually occurred in relatively equal numbers in the population, then a given model may make the false assumption that probability could be the determining predictive factor. Avoiding non-random samples is the best way to deal with bias; however, when this is impractical, techniques such as resampling, boosting, and weighting are strategies which can be introduced to help deal with the situation. 
-
-### K-fold Cross Validation
-By partitioning the available data into three sets, we drastically reduce the number of samples which can be used for learning the model, and the results can depend on a particular random choice for the pair of (train, validation) sets.
-
-A solution to this problem is a procedure called cross-validation (CV for short). A test set should still be held out for final evaluation, but the validation set is no longer needed when doing CV. In the basic approach, called k-fold CV, the training set is split into k smaller sets (other approaches are described below, but generally follow the same principles). The following procedure is followed for each of the k “folds”:
-
-- A model is trained using k-1 of the folds as training data;
-- the resulting model is validated on the remaining part of the data (i.e., it is used as a test set to compute a performance measure   such as accuracy).
-
-The performance measure reported by k-fold cross-validation is then the average of the values computed in the loop. This approach can be computationally expensive, but does not waste too much data (as it is the case when fixing an arbitrary test set), which is a major advantage in problem such as inverse inference where the number of samples is very small.
-
 [Source](https://elitedatascience.com/machine-learning-interview-questions-answers)
+
+## The Big Picture
 ### What are parametric models? Give an example.
 Parametric models are those with a finite number of parameters. To predict new data, you only need to know the parameters of the model. Examples include linear regression, logistic regression, and linear SVMs.
 
@@ -88,6 +23,7 @@ More complex models are more prone to being overfit (high variance) but they are
 
 The best model for a given problem usually lies somewhere in the middle.
 
+## Optimization
 ### What is the difference between stochastic gradient descent (SGD) and gradient descent (GD)?
 Both algorithms are methods for finding a set of parameters that minimize a loss function by evaluating parameters against data and then making adjustments.
 
@@ -102,6 +38,21 @@ That means GD is preferable for small datasets while SGD is preferable for large
 
 In practice, however, SGD is used for most applications because it minimizes the error function well enough while being much faster and more memory efficient for large datasets.
 
+### Explain what regularization is and why it is useful.
+[blog about regularization](https://towardsdatascience.com/regularization-in-machine-learning-76441ddcf99a)
+
+To prevent overfitting. It discourages learning a more complex or flexible model, so as to avoid the risk of overfitting. We 
+multiply the parameters by regularization coefficient, λ (a tuning parameter that decides how much we want to penalize the flexibility of our model)
+
+![Ridge Regression](https://cdn-images-1.medium.com/max/800/1*CiqZ8lhwxi5c4d1nV24w4g.png)
+
+![Lasso](https://cdn-images-1.medium.com/max/800/1*tHJ4sSPYV0bDr8xxEdiwXA.png)
+
+Regularization, significantly reduces the variance of the model, without substantial increase in its bias. So the tuning parameter λ, used in the regularization techniques described above, controls the impact on bias and variance. As the value of λ rises, it reduces the value of coefficients and thus reducing the variance. Till a point, this increase in λ is beneficial as it is only reducing the variance(hence avoiding overfitting), without loosing any important properties in the data. But after certain value, the model starts loosing important properties, giving rise to bias in the model and thus underfitting. Therefore, the value of λ should be carefully selected.
+
+### momentum
+
+## Data Preprocessing
 ### What is the Box-Cox transformation used for?
 [Blog](https://www.quora.com/In-laymans-language-Box-Cox-transformation-is-used-for-what)
 The Box-Cox transformation is a generalized "power transformation" that transforms data to make the distribution more normal.
@@ -120,11 +71,26 @@ It's used to stabilize the variance (eliminate heteroskedasticity) and normalize
 - Performing PCA, ICA, or other forms of algorithmic dimensionality reduction.
 - Combining features with feature engineering.
 
+## Sampling & Splitting
+### K-fold Cross Validation
+By partitioning the available data into three sets, we drastically reduce the number of samples which can be used for learning the model, and the results can depend on a particular random choice for the pair of (train, validation) sets.
+
+A solution to this problem is a procedure called cross-validation (CV for short). A test set should still be held out for final evaluation, but the validation set is no longer needed when doing CV. In the basic approach, called k-fold CV, the training set is split into k smaller sets (other approaches are described below, but generally follow the same principles). The following procedure is followed for each of the k “folds”:
+
+- A model is trained using k-1 of the folds as training data;
+- the resulting model is validated on the remaining part of the data (i.e., it is used as a test set to compute a performance measure   such as accuracy).
+
+The performance measure reported by k-fold cross-validation is then the average of the values computed in the loop. This approach can be computationally expensive, but does not waste too much data (as it is the case when fixing an arbitrary test set), which is a major advantage in problem such as inverse inference where the number of samples is very small.
+
 ### If you split your data into train/test splits, is it still possible to overfit your model?
 Yes, it's definitely possible. One common beginner mistake is re-tuning a model or training new models with different parameters after seeing its performance on the test set.
 
 In this case, its the model selection process that causes the overfitting. The test set should not be tainted until you're ready to make your final selection.
 
+### What is selection bias, why is it important and how can you avoid it?
+Selection bias, in general, is a problematic situation in which error is introduced due to a non-random population sample. For example, if a given sample of 100 test cases was made up of a 60/20/15/5 split of 4 classes which actually occurred in relatively equal numbers in the population, then a given model may make the false assumption that probability could be the determining predictive factor. Avoiding non-random samples is the best way to deal with bias; however, when this is impractical, techniques such as resampling, boosting, and weighting are strategies which can be introduced to help deal with the situation. 
+
+## Supervised Learning
 ### What are the advantages and disadvantages of decision trees?
 Advantages: Decision trees are easy to interpret, nonparametric (which means they are robust to outliers), and there are relatively few parameters to tune.
 
@@ -140,6 +106,7 @@ If training set is small, high bias / low variance models (e.g. Naive Bayes) ten
 
 If training set is large, low bias / high variance models (e.g. Logistic Regression) tend to perform better because they can reflect more complex relationships.
 
+## Unsupervised Learning
 ###  Explain Latent Dirichlet Allocation (LDA).
 Latent Dirichlet Allocation (LDA) is a common method of topic modeling, or classifying documents by subject matter.
 
@@ -154,6 +121,45 @@ These new features, or principal components, sequentially maximize the variance 
 
 As a result, PCA is useful for dimensionality reduction because you can set an arbitrary variance cutoff.
 
+## Model Evaluation
+### Explain what precision and recall are. How do they relate to the ROC curve?
+Precision-Recall is a useful measure of success of prediction when the classes are very imbalanced. 
+
+Recall (sensitivity): True positive divided by how many real ones are there. (how many of the positive samples have been identified as being positive)
+
+A system with high recall but low precision returns many results, but most of its predicted labels are incorrect when compared to the training labels.
+
+Precision: True positive divided by how many ones did you predict
+A system with high precision but low recall is just the opposite, returning very few results, but most of its predicted labels are correct when compared to the training labels.
+
+Sensitivity is the other name for recall but specificity is **NOT PRECISION**. Specificity is a measure of how many of the negative samples have been identified as being negative. 
+
+Precision is used when positive class is more interesting than the negative class. So, if your problem involves kind of searching a needle in the haystack when for ex: the positive class samples are very rare compared to the negative classes, use a precision recall curve. Othwerwise use a ROC curve because a ROC curve remains the same regardless of the baseline prior probability of your positive class (the important rare class).
+
+### Is it better to have too many false positives, or too many false negatives? Explain.
+It depends on the question as well as on the domain for which we are trying to solve the question. 
+
+In medical testing, false negatives may provide a falsely reassuring message to patients and physicians that disease is absent, when it is actually present. This sometimes leads to inappropriate or inadequate treatment of both the patient and their disease. So, it is desired to have too many false positive. 
+
+For spam filtering, a false positive occurs when spam filtering or spam blocking techniques wrongly classify a legitimate email message as spam and, as a result, interferes with its delivery. While most anti-spam tactics can block or filter a high percentage of unwanted emails, doing so without creating significant false-positive results is a much more demanding task. So, we prefer too many false negatives over many false positives.
+
+### How can you prove that one improvement you've brought to an algorithm is really an improvement over not doing anything?
+One common way to achieve the above guidelines is through A/B testing, where both the versions of algorithm are kept running on similar environment for a considerably long time and real-life input data is randomly split between the two. This approach is particularly common in Web Analytics. 
+
+(more on AB Testing later)
+
+### What is statistical power?
+Power of a hypothesis test is the probability that the test correctly rejects null hypothesis (H0) when alternative hypothesis (H1) is true. To put in another way, Statistical power is the likelihood that a study will detect an effect when the effect is present. The higher the statistical power, the less likely you are to make a Type II error (concluding there is no effect when, in fact, there is). (Different fromn AB testing?).
+
+### How would you validate a model you created to generate a predictive model of a quantitative outcome variable using multiple regression.
+- Using R<sup>2</sup> is one way.
+- If the values seem to be reasonable, examine the parameters; any of the following would indicate poor estimation or multi-collinearity: opposite signs of expectations, unusually large or small values, or observed inconsistency when the model is fed new data.
+- Use jackknife resampling if the dataset contains a small number of instances, and measure validity with R squared and mean squared error (MSE). The jackknife estimator of a parameter is found by systematically leaving out each observation from a dataset and calculating the estimate and then finding the average of these calculations. Given a sample of size n, the jackknife estimate is found by aggregating the estimates of each n-1 sized sub-sample.
+
+### What is root cause analysis?
+Essentially, you can find the root cause of a problem and show the relationship of causes by repeatedly asking the question, "Why?", until you find the root of the problem.
+
+## Ensemble Learning
 ### Why are ensemble methods (Combining multiple models for better performance) superior to individual models?
 They average out biases, reduce variance, and are less likely to overfit.
 
@@ -165,6 +171,13 @@ Bagging, or Bootstrap Aggregating, is an ensemble method in which the dataset is
 Then, each subset is used to train a model, and the final predictions are made through voting or averaging the component models.
 
 Bagging is performed in parallel.
+
+
+
+## Business Applications
+
+### price elasticity
+Price Elasticity: This curve measures how demand varies with changes in price.
 
 ### How can you help our marketing team be more efficient?
 The answer will depend on the type of company. Here are some examples.
