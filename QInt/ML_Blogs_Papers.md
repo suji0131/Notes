@@ -4,7 +4,7 @@
 [Link](https://research.googleblog.com/2018/03/using-evolutionary-automl-to-discover.html)
 ### Summary
 
-## NN Optimization and Learning Rate Decay
+## Using RL to create new Optimization methods and Learning Rate Decay
 [Link](https://research.googleblog.com/2018/03/using-machine-learning-to-discover.html)
 ### Summary
 - It is possible to automate the discovery of new optimizers, in a way that is similar to how AutoML has been used to discover new competitive neural network architectures.
