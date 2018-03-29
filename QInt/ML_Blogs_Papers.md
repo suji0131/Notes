@@ -11,3 +11,5 @@
 - PowerSign and AddSign Optimizers are discovered.
 - In the PowerSign optimizer each update compares the sign of the gradient and its running average, adjusting the step size according to whether those two values agree.
 - Also discovered a simple learning rate decay scheme, [**linear cosine decay**](https://www.tensorflow.org/api_docs/python/tf/train/linear_cosine_decay), which we found can lead to faster convergence.
+### Thoughts
+Can we use this approach to find new algorthims/heuristics/pruning_rules for NP-Hard problems? 
