@@ -56,11 +56,13 @@ multiply the parameters by regularization coefficient, λ (a tuning parameter th
 Regularization, significantly reduces the variance of the model, without substantial increase in its bias. So the tuning parameter λ, used in the regularization techniques described above, controls the impact on bias and variance. As the value of λ rises, it reduces the value of coefficients and thus reducing the variance. Till a point, this increase in λ is beneficial as it is only reducing the variance(hence avoiding overfitting), without loosing any important properties in the data. But after certain value, the model starts loosing important properties, giving rise to bias in the model and thus underfitting. Therefore, the value of λ should be carefully selected.
 
 ### Explain the difference between L1 (Lasso) and L2 (Ridge) regularization methods? (Elastic net is ration of L1 & L2 Regu.)
-For Lasso or L1-Regularization, you use L1 norm of coeficients for regularization 
+For Lasso or L1-Regularization, you use L1 norm of coeficients for regularization. (L1 norm of a vector is sum of absolute values of its components) 
 ![Lasso](https://cdn-images-1.medium.com/max/800/1*tHJ4sSPYV0bDr8xxEdiwXA.png)
 
-For Ridge or L2-Regularization, you use L2 norm of coeficients for regularization 
+For Ridge or L2-Regularization, you use L2 norm of coeficients for regularization. (L2 norm of a vector is sum of squares of its components) 
 ![Ridge Regression](https://cdn-images-1.medium.com/max/800/1*CiqZ8lhwxi5c4d1nV24w4g.png)
+
+### Which regularization is better L1 or L2?
 
 ### momentum
 
