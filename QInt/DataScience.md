@@ -65,6 +65,13 @@ For Ridge or L2-Regularization, you use L2 norm of coeficients for regularizatio
 ![Ridge Regression](https://cdn-images-1.medium.com/max/800/1*CiqZ8lhwxi5c4d1nV24w4g.png)
 
 ### Which regularization is better L1 or L2?
+As a rule-of-thumb, you should always go for L2 in practice.
+
+Is there collinearity among some features? L2 regularization can improve prediction quality in this case. However, it is true in general that either form of regularization will improve out-of-sample prediction, whether or not there is multicollinearity and whether or not there are irrelevant features, simply because of the shrinkage properties of the regularized estimators. 
+
+L1 regularization can't help with multicollinearity; it will just pick the feature with the largest correlation to the outcome
+
+Even in the case when you have a strong reason to use L1 given the number of features, I would recommend going for Elastic Nets instead. Granted this will only be a practical option if you are doing linear/logistic regression. But, in that case, Elastic Nets have proved to be (in theory and in practice) better than L1/Lasso.
 
 ### momentum
 
