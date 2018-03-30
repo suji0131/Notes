@@ -4,7 +4,7 @@
 
 [Source](https://elitedatascience.com/machine-learning-interview-questions-answers)
 
-[ToDo - Springer](https://www.springboard.com/blog/data-science-interview-questions/)
+[ToDo - SpringBoard](https://www.springboard.com/blog/data-science-interview-questions/)
 
 [ToDo - Glassdoor](https://www.glassdoor.com/Interview/data-scientist-interview-questions-SRCH_KO0,14.htm)
 
