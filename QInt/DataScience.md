@@ -57,9 +57,11 @@ Regularization, significantly reduces the variance of the model, without substan
 
 ### Explain the difference between L1 (Lasso) and L2 (Ridge) regularization methods? (Elastic net is ration of L1 & L2 Regu.)
 For Lasso or L1-Regularization, you use L1 norm of coeficients for regularization. (L1 norm of a vector is sum of absolute values of its components) 
+
 ![Lasso](https://cdn-images-1.medium.com/max/800/1*tHJ4sSPYV0bDr8xxEdiwXA.png)
 
 For Ridge or L2-Regularization, you use L2 norm of coeficients for regularization. (L2 norm of a vector is sum of squares of its components) 
+
 ![Ridge Regression](https://cdn-images-1.medium.com/max/800/1*CiqZ8lhwxi5c4d1nV24w4g.png)
 
 ### Which regularization is better L1 or L2?
