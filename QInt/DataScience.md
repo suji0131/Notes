@@ -129,6 +129,8 @@ If training set is small, high bias / low variance models (e.g. Naive Bayes) ten
 
 If training set is large, low bias / high variance models (e.g. Logistic Regression) tend to perform better because they can reflect more complex relationships.
 
+### Batch Normalization
+
 ## Unsupervised Learning
 ###  Explain Latent Dirichlet Allocation (LDA).
 Latent Dirichlet Allocation (LDA) is a common method of topic modeling, or classifying documents by subject matter.
