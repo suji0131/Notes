@@ -4,6 +4,10 @@
 
 [Source](https://elitedatascience.com/machine-learning-interview-questions-answers)
 
+[ToDo - Springer](https://www.springboard.com/blog/data-science-interview-questions/)
+
+[ToDo - Glassdoor](https://www.glassdoor.com/Interview/data-scientist-interview-questions-SRCH_KO0,14.htm)
+
 ## The Big Picture
 ### What are parametric models? Give an example.
 Parametric models are those with a finite number of parameters. To predict new data, you only need to know the parameters of the model. Examples include linear regression, logistic regression, and linear SVMs.
@@ -50,6 +54,8 @@ multiply the parameters by regularization coefficient, λ (a tuning parameter th
 ![Lasso](https://cdn-images-1.medium.com/max/800/1*tHJ4sSPYV0bDr8xxEdiwXA.png)
 
 Regularization, significantly reduces the variance of the model, without substantial increase in its bias. So the tuning parameter λ, used in the regularization techniques described above, controls the impact on bias and variance. As the value of λ rises, it reduces the value of coefficients and thus reducing the variance. Till a point, this increase in λ is beneficial as it is only reducing the variance(hence avoiding overfitting), without loosing any important properties in the data. But after certain value, the model starts loosing important properties, giving rise to bias in the model and thus underfitting. Therefore, the value of λ should be carefully selected.
+
+### Explain the difference between L1 and L2 regularization methods?
 
 ### momentum
 
@@ -159,6 +165,8 @@ Power of a hypothesis test is the probability that the test correctly rejects nu
 
 ### What is root cause analysis?
 Essentially, you can find the root cause of a problem and show the relationship of causes by repeatedly asking the question, "Why?", until you find the root of the problem.
+
+### confounding factors
 
 ## Ensemble Learning
 ### Why are ensemble methods (Combining multiple models for better performance) superior to individual models?
