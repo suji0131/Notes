@@ -47,5 +47,7 @@ L-1 Regularization. The Lasso is a linear model that estimates sparse coefficien
 
 #### ToDo
 
+### SVMs
+
 ### Naive Bayes
 
