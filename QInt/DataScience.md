@@ -129,6 +129,13 @@ If training set is small, high bias / low variance models (e.g. Naive Bayes) ten
 
 If training set is large, low bias / high variance models (e.g. Logistic Regression) tend to perform better because they can reflect more complex relationships.
 
+### How is kNN different from k-means clustering?
+kNN, or k-nearest neighbors is a classification algorithm, where the k is an integer describing the the number of neighboring data points that influence the classification of a given observation. K-means is a clustering algorithm, where the k is an integer describing the number of clusters to be created from the given data. Both accomplish different tasks.
+
+### What are some situations where a general linear model fails?
+- When there is a non-linear relationship. 
+- Four Assumptions are violated. (Nor, Lin, Indepen, Variance)
+
 ### Batch Normalization
 
 ## Unsupervised Learning
@@ -186,11 +193,23 @@ Essentially, you can find the root cause of a problem and show the relationship 
 
 ### confounding factors
 
+### In your opinion, which is more important when designing a machine learning model: Model performance? Or model accuracy?
+
+### How would you validate a model you created to generate a predictive model of a quantitative outcome variable using multiple regression?
+R<sup>2</sup>
+
+### I have two models of comparable accuracy and computational performance. Which one should I choose for production and why?
+- Depends on Data (balanced or unbalanced?)
+- Your requirement. Sometimes high Flase Pos is req another time False Negative of models (Health care problem or Spam filtering)
+
 ## Ensemble Learning
 ### Why are ensemble methods (Combining multiple models for better performance) superior to individual models?
 They average out biases, reduce variance, and are less likely to overfit.
 
 This implies that you can build your models as usual and typically expect a small performance boost from ensembling.
+
+### Do you think 50 small decision trees are better than a large one? Why?
+They average out biases, reduce variance, and are less likely to overfit. If we built/used those 50 trees properly
 
 ### Explain bagging.
 Bagging, or Bootstrap Aggregating, is an ensemble method in which the dataset is first divided into multiple subsets through resampling.
@@ -198,8 +217,6 @@ Bagging, or Bootstrap Aggregating, is an ensemble method in which the dataset is
 Then, each subset is used to train a model, and the final predictions are made through voting or averaging the component models.
 
 Bagging is performed in parallel.
-
-
 
 ## Business Applications
 
@@ -212,6 +229,11 @@ The answer will depend on the type of company. Here are some examples.
 - Clustering algorithms to build custom customer segments for each type of marketing campaign.
 - Natural language processing for headlines to predict performance before running ad spend.
 - Predict conversion probability based on a user's website behavior in order to create better re-targeting campaigns.
+
+## Modeling
+
+### How would you effectively represent data with 5 dimensions? 
+With visual attributes such as color, size and shape one can easily add some more dimensions to a visualization. So using a 2D scatter plot with diff colors for one dim, size of other dim, and shapes for another dim we can represent 5D data. Correct plot  depends on the correct combination of displayed columns, so try diff combinations.
 
 
 
