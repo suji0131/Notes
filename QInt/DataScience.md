@@ -175,6 +175,10 @@ In medical testing, false negatives may provide a falsely reassuring message to 
 
 For spam filtering, a false positive occurs when spam filtering or spam blocking techniques wrongly classify a legitimate email message as spam and, as a result, interferes with its delivery. While most anti-spam tactics can block or filter a high percentage of unwanted emails, doing so without creating significant false-positive results is a much more demanding task. So, we prefer too many false negatives over many false positives.
 
+### What is the difference bt Type-1 and Type-2 Errors?
+- Type-1 is FP
+- Type-2 is FN
+
 ### How can you prove that one improvement you've brought to an algorithm is really an improvement over not doing anything?
 One common way to achieve the above guidelines is through A/B testing, where both the versions of algorithm are kept running on similar environment for a considerably long time and real-life input data is randomly split between the two. This approach is particularly common in Web Analytics. 
 
@@ -195,12 +199,9 @@ Essentially, you can find the root cause of a problem and show the relationship 
 
 ### In your opinion, which is more important when designing a machine learning model: Model performance? Or model accuracy?
 
-### How would you validate a model you created to generate a predictive model of a quantitative outcome variable using multiple regression?
-R<sup>2</sup>
-
 ### I have two models of comparable accuracy and computational performance. Which one should I choose for production and why?
 - Depends on Data (balanced or unbalanced?)
-- Your requirement. Sometimes high Flase Pos is req another time False Negative of models (Health care problem or Spam filtering)
+- Your requirement. Sometimes high Flase Pos is req another time False Neg are prefered (Health care and Spam filtering respec.)
 
 ## Ensemble Learning
 ### Why are ensemble methods (Combining multiple models for better performance) superior to individual models?
@@ -230,7 +231,17 @@ The answer will depend on the type of company. Here are some examples.
 - Natural language processing for headlines to predict performance before running ad spend.
 - Predict conversion probability based on a user's website behavior in order to create better re-targeting campaigns.
 
-## Modeling
+### How do you detect individual paid accounts shared by multiple users?
+- If within some timeframe multiple logins from regions geographically far apart log in, then you know those credentials have been shared.
+- Bandwitdh consumption: if your site offers lots of content, if a user goes over some high limit, it means its credentials have been shared.
+- Keep a counter of live sessions so you can see how many people log in at the same time. This is imprecise because the same person can log in through multiple browsers from the same IP and have a session on each one.
+
+### How do you take millions of users with 100's of transactions each, amongst 10k's of products and group the users together in a meaningful segments? (Apple)
+- Type of Products can be segments (Macs, Iphones, Ipads etc.) Based on each segment we can do further analysis.
+- 
+
+
+## Visualization
 
 ### How would you effectively represent data with 5 dimensions? 
 With visual attributes such as color, size and shape one can easily add some more dimensions to a visualization. So using a 2D scatter plot with diff colors for one dim, size of other dim, and shapes for another dim we can represent 5D data. Correct plot  depends on the correct combination of displayed columns, so try diff combinations.
