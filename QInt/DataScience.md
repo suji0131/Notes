@@ -184,8 +184,17 @@ One common way to achieve the above guidelines is through A/B testing, where bot
 
 (more on AB Testing later)
 
+### How to observe over-fitting?
+![Overfitting](https://codelabs.developers.google.com/codelabs/cloud-tensorflow-mnist/img/d1a460e8334d6b1c.png)
+
+As seen in above fig to the left end of graph we can see that the loss on train data is very low and on validation it is increasing which is a sign of overfitting. Dropout and Regularization are some of the methods that help to reduce the overfitting.
+
 ### What is statistical power?
 Power of a hypothesis test is the probability that the test correctly rejects null hypothesis (H0) when alternative hypothesis (H1) is true. To put in another way, Statistical power is the likelihood that a study will detect an effect when the effect is present. The higher the statistical power, the less likely you are to make a Type II error (concluding there is no effect when, in fact, there is). (Different fromn AB testing?).
+
+### How would you test if survey responses were filled at random by certain individuals, as opposed to truthful selections?
+- I would design the test in a way that certain information is asked two different ways. if two answers disagree with each other I would seriously doubt the validity of the answers.
+- Calculate Cronbach's alpha for the survey items. If it is low (below .5), it is very likely that the questions were answered at random.
 
 ### How would you validate a model you created to generate a predictive model of a quantitative outcome variable using multiple regression.
 - Using R<sup>2</sup> is one way.
@@ -238,13 +247,17 @@ The answer will depend on the type of company. Here are some examples.
 
 ### How do you take millions of users with 100's of transactions each, amongst 10k's of products and group the users together in a meaningful segments? (Apple)
 - Type of Products can be segments (Macs, Iphones, Ipads etc.) Based on each segment we can do further analysis.
-- 
-
+- Calc vector distances
 
 ## Visualization
 
 ### How would you effectively represent data with 5 dimensions? 
 With visual attributes such as color, size and shape one can easily add some more dimensions to a visualization. So using a 2D scatter plot with diff colors for one dim, size of other dim, and shapes for another dim we can represent 5D data. Correct plot  depends on the correct combination of displayed columns, so try diff combinations.
+
+## Probability and Statistics
+### You're about to get on a plane to Seattle. You want to know if you should bring an umbrella. You call 3 random friends of yours who live there and ask each independently if it's raining. Each of your friends has a 2/3 chance of telling you the truth and a 1/3 chance of messing with you by lying. All 3 friends tell you that "Yes" it is raining. What is the probability that it's actually raining in Seattle?
+Bayesian stats: you should estimate the prior probability that it's raining on any given day in Seattle. If you mention this or ask the interviewer will tell you to use 25%. Then it's straight-forward: P(raining | Yes,Yes,Yes) = Prior(raining) * P(Yes,Yes,Yes | raining) / P(Yes, Yes, Yes) P(Yes,Yes,Yes) = P(raining) * P(Yes,Yes,Yes | raining) + P(not-raining) * P(Yes,Yes,Yes | not-raining) = 0.25*(2/3)^3 + 0.75*(1/3)^3 = 0.25*(8/27) + 0.75*(1/27) P(raining | Yes,Yes,Yes) = 0.25*(8/27) / ( 0.25*8/27 + 0.75*1/27 ) Bonus points if you notice that you don't need a calculator since all the 27's cancel out and you can multiply top and bottom by 4. P(training | Yes,Yes,Yes) = 8 / ( 8 + 3 ) = 8/11
+
 
 
 
