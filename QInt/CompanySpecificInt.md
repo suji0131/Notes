@@ -1,4 +1,4 @@
-# ActiveHrs/Earnin
+# ActiveHrs/Ear_nin
 
 ## SQL
 ### Given two tables and asked to do a Group By type Question
