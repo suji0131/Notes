@@ -1,1 +1,2 @@
-### a box has six fair dice and a single unfair die with all sixes. One die is chosen at random and rolled twice. On both rolls, six appears. What is the probability that the selected die is the unfair one?
+### A box has six fair dice and a single unfair die with all sixes. One die is chosen at random and rolled twice. On both rolls, six appears. What is the probability that the selected die is the unfair one?
+Bayes's theorem says that p(A|B)=p(B|A)p(A)p(B)^(−1), where A is the event of picking the unfair die and B is the event of rolling two 6s. Then p(A|B)=1⋅1/7⋅({1⋅1/7} + {(1/6^2) ⋅ (6/7)})^(−1)= 6/7.
