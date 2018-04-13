@@ -1,0 +1,1 @@
+### a box has six fair dice and a single unfair die with all sixes. One die is chosen at random and rolled twice. On both rolls, six appears. What is the probability that the selected die is the unfair one?
