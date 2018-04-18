@@ -56,8 +56,8 @@ draw = choice(A, 1, p=wts/(wts[0]+wts[1]+wts[2]))
 ```
 
 
-
-#Given an N element array, find all triples a, b, and c, that satisfy the following famous geometric equality: a^2 + b^2 = c^2
+# Up$trt
+### Given an N element array, find all triples a, b, and c, that satisfy the following famous geometric equality: a^2 + b^2 = c^2
 ```
 # assume all elements are unique, positive integers
 
