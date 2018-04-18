@@ -56,8 +56,9 @@ draw = choice(A, 1, p=wts/(wts[0]+wts[1]+wts[2]))
 ```
 
 
-#Given an N element array, find all triples a, b, and c, that satisfy the following famous geometric equality: a^2 + b^2 = c^2
 
+#Given an N element array, find all triples a, b, and c, that satisfy the following famous geometric equality: a^2 + b^2 = c^2
+```
 # assume all elements are unique, positive integers
 
 myArray = [2, 11, 13, 15, 12, 17, 3, 5, 7, 9, 4]
@@ -75,13 +76,14 @@ def triples(a): # a is the array
                     triples.append(ans)
                     
     return triples
-                
-        
-        
-        
+```
+   
+Whats happening to the ML algorithm below:
+```        
 #Sample Size      1000    5000    10000    20000    30000
 #Training Err     0.5     1       2        2        2
 #Test Error       10.0    8       6        6        6
 
 # test set - 100000000000
-
+```
+- Learning rate is not decaying properly so as no of training samples inc. the accu. has fallen because SGD may have gone to another local minima. (But why is test error decreasing?)
