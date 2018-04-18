@@ -77,6 +77,7 @@ def triples(a): # a is the array
                     
     return triples
 ```
+Ans: [Geeks4geeks](https://www.geeksforgeeks.org/find-pythagorean-triplet-in-an-unsorted-array/)
    
 Whats happening to the ML algorithm below:
 ```        
