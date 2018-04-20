@@ -20,6 +20,10 @@ The difficulty of searching through a solution space becomes much harder as you 
 Consider the analogy of looking for a penny in a line vs. a field vs. a building. The more dimensions you have, the higher volume of data you'll need.
 
 ### Explain the Bias-Variance Tradeoff.
+```
+Bias: How far from truth is your model's expected value.
+Variance: How the performance of model changes with new data.
+```
 Predictive models have a tradeoff between bias (how well the model fits the data or how far the expected value is from original mean) and variance (how much the model changes based on changes in the inputs).
 
 Simpler models are stable (low variance) but they don't get close to the truth (high bias).
