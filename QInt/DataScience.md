@@ -34,11 +34,22 @@ The best model for a given problem usually lies somewhere in the middle.
 
 ## Optimization
 ### What is the difference between stochastic gradient descent (SGD) and gradient descent (GD)?
+(Take a look at my Optimization Algo Summary Notes/Photo)
 Both algorithms are methods for finding a set of parameters that minimize a loss function by evaluating parameters against data and then making adjustments.
 
 In standard gradient descent, you'll evaluate all training samples for each set of parameters. This is akin to taking big, slow steps toward the solution.
 
 In stochastic gradient descent, you'll evaluate only 1 training sample for the set of parameters before updating them. This is akin to taking small, quick steps toward the solution.
+
+```
+# GD Gradient func looks like this
+def gradient_GD(loss_fn, entire_Data, params_value):
+  ...
+  
+# SGD Gradient func looks like this
+def gradient_SGD(loss_fn, single_Data_point, params_value):
+  ...
+```
 
 ### When would you use GD over SDG, and vice-versa?
 GD theoretically minimizes the error function better than SGD. However, SGD converges much faster once the dataset becomes large.
