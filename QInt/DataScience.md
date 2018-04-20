@@ -205,6 +205,9 @@ One common way to achieve the above guidelines is through A/B testing, where bot
 As seen in above fig to the left end of graph we can see that the loss on train data is very low and on validation it is increasing which is a sign of overfitting. Dropout and Regularization are some of the methods that help to reduce the overfitting.
 
 ### What is statistical power?
+```
+Power = P(we reject H0 when H_alternate is True)
+```
 Power of a hypothesis test is the probability that the test correctly rejects null hypothesis (H0) when alternative hypothesis (H1) is true. To put in another way, Statistical power is the likelihood that a study will detect an effect when the effect is present. The higher the statistical power, the less likely you are to make a Type II error (concluding there is no effect when, in fact, there is). (Different fromn AB testing?).
 
 ### How would you test if survey responses were filled at random by certain individuals, as opposed to truthful selections?
