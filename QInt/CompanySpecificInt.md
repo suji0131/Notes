@@ -87,6 +87,7 @@ Whats happening to the ML algorithm below:
 
 # test set - 100000000000
 ```
+One Correct Reason might be: If your black box algo is using a regularization, and if you used different regualrization (and lambda inc for inc in no of samples) then model might be underfitting after intial boost? 
 - Learning rate is not decaying properly so as no of training samples inc. the accu. has fallen because SGD may have gone to another local minima. (But why is test error decreasing?)
 
 
