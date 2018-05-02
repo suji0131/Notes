@@ -32,6 +32,13 @@ More complex models are more prone to being overfit (high variance) but they are
 
 The best model for a given problem usually lies somewhere in the middle.
 
+### Bias and Variance in terms of error rates.
+From Andrew Ng book Ch 20 - 22: 
+```
+Bias = Training Error 
+Variance = Validation Error - Training Error
+```
+
 ## Optimization
 ### What is the difference between stochastic gradient descent (SGD) and gradient descent (GD)?
 (Take a look at my Optimization Algo Summary Notes/Photo)
