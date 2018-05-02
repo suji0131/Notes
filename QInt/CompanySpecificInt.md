@@ -79,7 +79,7 @@ def triples(a): # a is the array
 ```
 Ans: [Geeks4geeks](https://www.geeksforgeeks.org/find-pythagorean-triplet-in-an-unsorted-array/)
    
-Whats happening to the ML algorithm below:
+### Whats happening to the ML algorithm below / would you deploy it?
 ```        
 #Sample Size      1000    5000    10000    20000    30000
 #Training Err     0.5     1       2        2        2
@@ -87,6 +87,13 @@ Whats happening to the ML algorithm below:
 
 # test set - 100000000000
 ```
+From Andrew Ng book Ch 20 - 22: 
+```
+Bias = Training Error 
+Variance = Validation Error - Training Error
+```
+Based on the above analogy, as trainig samples are increased bias inc to 2% and variance remained constant at 4%. Which is good enough level of bias and variance so yes we can deploy the model.
+
 One Correct Reason might be: If your black box algo is using a regularization, and if you used different regualrization (and lambda inc for inc in no of samples) then model might be underfitting after intial boost? 
 - Learning rate is not decaying properly so as no of training samples inc. the accu. has fallen because SGD may have gone to another local minima. (But why is test error decreasing?)
 
