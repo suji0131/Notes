@@ -3,6 +3,8 @@
 
 [algo_typ](https://www.dezyre.com/article/2018-data-science-interview-questions-for-top-tech-companies-/189)
 
+## Basic
+
 ### Write code to sort a DataFrame in Python in descending order
 ```
 df.sort_values(by=['col1', 'col2'], ascending=False, inplace=True, na_position='first')
