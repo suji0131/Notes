@@ -1,5 +1,6 @@
 # Python
 [basic](https://www.dezyre.com/article/100-data-science-in-python-interview-questions-and-answers-for-2018/188)
+
 [algo_typ](https://www.dezyre.com/article/2018-data-science-interview-questions-for-top-tech-companies-/189)
 
 ### Write code to sort a DataFrame in Python in descending order
