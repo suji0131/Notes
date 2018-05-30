@@ -108,3 +108,58 @@ Some Data Quality Metrics are:
 - Validity (Does the data conform to the respective standards set for it?)
 - Accuracy (How well does the data reflect the real-world person or thing that is identified by it?)
 - Consistency (How well does the data align with a preconceived pattern? Birth dates share a common consistency issue, since in the U.S., the standard is MM/DD/YYYY, whereas in Europe and other areas, the usage of DD/MM/YYYY is standard.)
+
+# W@lm@rt_!@b$
+```
+Date                               5/24   5/25   5/26    5/27    5/28     5/29
+For customer A, daily_order_amt = [0, 107.92, 108.67, 109.86, 110.15, 200.34]
+
+For customer B, daily_order_amt = [105.21, 98.67, 100.64, 101.15, 20.34]
+
+Total Order Amount per customer within the past day, 2 days, 3 days, 4 days
+
+
+import pandas as pd
+
+
+df = pd.Dataframe(col = ['Customer', 'Quantity'])
+
+df['Customer'] = ['A', 'B']
+
+df['Quatity'] = [[107.92, 108.67, 109.86, 110.15, 200.34], [105.21, 98.67, 100.64, 101.15, 20.34]]
+
+assert(len(df) == 2)
+
+
+#n is number of past days
+
+def past_quant(n):
+  _quant_ = 0
+  for i in range(n):
+    #past days total quatity
+    _quant_ = _quant_ + df.Quatity.apply(lambda x: x[-(n+1)]).sum()
+    
+  return _quant_
+
+#for past 2 days
+past_quant(2)
+
+Order_Num    Cust_ID    Order_Qty    Timestamp
+1234          ABC        2            May 30, 2018 13.00
+2345          BCD        1            May 30, 2018 14.00
+3456          ABC        4            May 30, 2018 14.20
+4567          DEF        3            May 30, 2018 15.00
+
+
+For every customer in the table, 
+compute the # of orders and sum of order quantity in the past 2 hours
+
+current time
+1. May 30, 2018 14.30
+2. May 30, 2018 16.00
+
+SELECT ot.Cust_ID, SUM(Order_Qty) AS Qunatity, COUNT(*) AS Num_Orders 
+FROM order_table ot
+WHERE DATEDIFF(mm, CURRENT_TIMESTAMP, ot.Timestamp) <= 120
+GROUP BY ot.Cust_ID
+```
