@@ -92,6 +92,19 @@ B = [0,1,2]
 [b for a,b in sorted(zip(A, B))]
 ```
 
+### Given an array of items and an array of weights associated with that array (both will have same length). Write a fn that returns the elements of first array with probabilities associated with wts array in long run.
+```
+A = [X, Y, Z]
+wts = [1/3, 1/17, 1/7]
+# In long run, probability of X being drawn from the A should be = wts[0] / (wts[0]+wts[1]+wts[2])
+```
+Answer is simple use weighted random choice
+```
+from numpy.random import choice
+#in our case list_of_candidates=A, number_of_items_to_pick=1, p=wts/(wts[0]+wts[1]+wts[2])
+draw = choice(A, 1, p=wts/(wts[0]+wts[1]+wts[2]))
+```
+
 
 
 
