@@ -1,6 +1,31 @@
 # SQL Interview Questions
 [source](https://www.toptal.com/sql/interview-questions)
 
+```
+SELECT inv.ID, inv.BillingDate, cus.Name, ref.Name AS referredby_name
+FROM Invoices inv
+  LEFT JOIN Customers cus ON inv.CustomerID = cus.ID
+  LEFT JOIN Customers ref ON cus.ReferredBy = ref.ID
+ORDER BY inv.BillingDate
+
+SELECT DISTINCT e.Salary
+FROM Employee e
+ORDER BY e.Salary DESC LIMIT 1 OFFSET 9
+
+
+SELECT u.username, td.trainig_date, td.training_id, COUNT(td.user_training_id)
+FROM training_details td
+  LEFT JOIN users u ON td.user_id = u.user_id
+GROUP BY u.username, td.trainig_date, td.training_id
+HAVING COUNT(td.user_training_id) > 1
+ORDER BY td.trainig_date DESC
+
+SELECT TOP 100 u.user_id
+FROM dbo.users u
+WHERE u.user_id % 2 = 1
+```
+
+
 ### What does UNION do? What is the difference between UNION and UNION ALL?
 UNION merges the contents of two structurally-compatible tables into a single combined table. The difference between UNION and UNION ALL is that UNION will omit duplicate records whereas UNION ALL will include duplicate records.
 
