@@ -1,9 +1,8 @@
 # Python
-[basic](https://www.dezyre.com/article/100-data-science-in-python-interview-questions-and-answers-for-2018/188)
-
-[algo_typ](https://www.dezyre.com/article/2018-data-science-interview-questions-for-top-tech-companies-/189)
 
 ## Basic
+
+[basic](https://www.dezyre.com/article/100-data-science-in-python-interview-questions-and-answers-for-2018/188)
 
 ### Write code to sort a DataFrame in Python in descending order
 ```
@@ -28,8 +27,30 @@ shuffle([1,2,3])
 ### How are arguments passed in Python- by reference or by value?
 The answer to this question is neither of these because passing semantics in Python are completely different. In all cases, Python passes arguments by value where all values are references to objects.
 
+### Diff between == and is?
+is is identity testing, == is equality testing. what happens in your code would be emulated in the interpreter like this:
+```
+>>> a = 'pub'
+>>> b = ''.join(['p', 'u', 'b'])
+>>> a == b
+True
+>>> a is b
+False
+```
+In other words: 'is' is the id(a) == id(b) {its comparing address}
+
 ### li = [1,2,3,4] then li[8:] returns?
 An empty list []. Most of the people might confuse the answer with an index error because the code is attempting to access a member in the list whose index exceeds the total number of members in the list. The reason being the code is trying to access the slice of a list at a starting index which is greater than the number of members in the list.
+
+### Reverse a string
+```
+word = 'ABCD'
+reverse = word[::-1]
+```
+
+## Algo_Type
+
+[algo_typ](https://www.dezyre.com/article/2018-data-science-interview-questions-for-top-tech-companies-/189)
 
 ### Sort a list based on another list
 ```
@@ -38,3 +59,7 @@ A = [10,20,15]
 B = [0,1,2]
 [b for a,b in sorted(zip(A, B))]
 ```
+
+
+
+
