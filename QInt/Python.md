@@ -48,6 +48,38 @@ word = 'ABCD'
 reverse = word[::-1]
 ```
 
+## Pandas
+
+### To datetime (apply and lambda too)
+```
+# to get only the date part
+df.Date = pd.to_datetime(df.Date).apply(lambda x: x.date())
+```
+
+### Group By
+```
+# sum or mean etc. is imp if col is not grouped
+final1 = finalSched.groupby(by=['Provider','Date', 'Activity'],as_index=False)['mins'].sum()
+```
+
+### Col comparisions
+```
+# can include more than two conditions
+df.loc[(df.col1 == 1) & (df.col2 == 2)]
+df.loc[(df.col1 == 1) | (df.col2 == 2)] 
+```
+
+### reset index
+```
+df.reset_index(drop=True, inplace=True)
+```
+
+### sort
+```
+# 0 for col, 1 for row
+df.sort_values(by='Date', axis=0, ascending=True,inplace=True)
+```
+
 ## Algo_Type
 
 [algo_typ](https://www.dezyre.com/article/2018-data-science-interview-questions-for-top-tech-companies-/189)
