@@ -4,9 +4,11 @@
 
 [Source](https://elitedatascience.com/machine-learning-interview-questions-answers)
 
-[ToDo - SpringBoard](https://www.springboard.com/blog/data-science-interview-questions/)
+[TD - Another excellent DS Qs](https://www.springboard.com/blog/machine-learning-interview-questions/)
 
-[ToDo - Glassdoor](https://www.glassdoor.com/Interview/data-scientist-interview-questions-SRCH_KO0,14.htm)
+[TD - SpringBoard](https://www.springboard.com/blog/data-science-interview-questions/)
+
+[TD - Glassdoor](https://www.glassdoor.com/Interview/data-scientist-interview-questions-SRCH_KO0,14.htm)
 
 ## The Big Picture
 ### What are parametric models? Give an example.
