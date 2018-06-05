@@ -20,7 +20,7 @@ class pyspark.SparkContext (
    sparkHome = None,                    # Spark installation directory
    pyFiles = None,                      # The .zip or .py files to send to the cluster and add to the PYTHONPATH.
    environment = None,                  # Worker nodes environment variables.
-   batchSize = 0,                       # The number of Py objects represented as a single Java object. 1=disable batching,   
+   batchSize = 0,                       # no of Py objects represented as a single Java object. 1=disable batching,   
                                         # 0=automatically choose the batch size based on object sizes, or -1 = unlimited batch size.
    serializer = PickleSerializer(),     # RDD serializer.
    conf = None,                         # An object of L{SparkConf} to set all the Spark properties.
@@ -37,3 +37,23 @@ from pyspark import SparkContext
 sc = SparkContext("local", "First App")
 ```
 Spark automatically creates the SparkContext object named sc, when **PySpark shell starts**.
+
+### Example
+Lets count the number of lines with character 'a' or 'b' in the README.md file. For ex, if there are 5 lines in a file and 3 lines have the character 'a', then the output will be → Line with a: 3. Same will be done for character ‘b’.
+```
+from pyspark import SparkContext
+
+#file to be read, README.md
+logFile = "file:///home/hadoop/spark-2.1.0-bin-hadoop2.7/README.md"
+
+sc = SparkContext("local", "first app")
+logData = sc.textFile(logFile).cache()
+
+numAs = logData.filter(lambda s: 'a' in s).count()
+numBs = logData.filter(lambda s: 'b' in s).count()
+print(numAs, numBs)
+```
+We will execute the following command in the terminal to run this Python file (app name and py file name is same). 
+```
+$SPARK_HOME/bin/spark-submit firstapp.py
+```
